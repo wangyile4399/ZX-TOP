@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html style="font-size: 40px;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>互联网样板</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-transform">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="layoutmode" content="standard">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="renderer" content="webkit">
+
+		<!--uc浏览器判断到页面上文字居多时，会自动放大字体优化移动用户体验。添加以下头部可以禁用掉该优化-->
+		<meta name="wap-font-scale" content="no">
+
+		<meta content="telephone=no" name="format-detection">
+		<meta http-equiv="Pragma" content="no-cache">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/masonry-docs.min.js"></script>
+		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<script type="text/javascript" src="js/fastclick.js" ></script>
+		<script type="text/javascript">
+				$(function() {
+				    FastClick.attach(document.body);
+				    var $container = $('#masonry');
+					    $container.imagesLoaded(function() {
+					        $container.masonry({
+					                itemSelector: '.box',
+					                gutter: 0,
+					                isAnimated: true,
+					            });
+					     });
+				});
+			//html root的字体计算应该放在最前面，这样计算就不会有误差了/
+			//2016.3.23 wjq update 之所以要加个判断返回一个20.5，是因为当用户在谷歌等浏览器直接输入手机端网站网址时，如果用户设置模块自定义样式的高度比较小，由于这时候的clientWidth为1920px，及返回的_htmlFontSize为40，这时候就会使模块太小，展示不完全，因此先取一个较为准确的值去展示。Mobi.resetHtmlFontSize()顺便也加了
+			var _htmlFontSize = (function() {
+				var clientWidth = document.documentElement ? document.documentElement.clientWidth : document.body.clientWidth;
+				if(clientWidth > 640) clientWidth = 640;
+				document.documentElement.style.fontSize = clientWidth * 1 / 16 + "px";
+				return clientWidth * 1 / 16;
+			})();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/base.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+
+	</head>
+
+	<body class="main_box">
+	<div class="header">
+		<img src="images/logo.png" class="logo">
+		<span class="icon-three-bars"></span>
+	</div>
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/slider.jpg"></div>
+            <div class="swiper-slide"><img src="images/slider.jpg"></div>
+            <div class="swiper-slide"><img src="images/slider.jpg"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+	<div class="contant">
+		<div class="c_top">
+			<div class="case"><img src="images/c_top1.png"><p>网站服务</p></div>
+			<div class="case c_top2"><img src="images/c_top2.png"><p>网站服务</p></div>
+			<div class="case"><img src="images/c_top3.png"><p>网站服务</p></div>
+		</div>
+		<div class="title">
+			<div class="txt">成功案例<b></b></div>
+			<span class="icon-angle-right"></span>
+		</div>
+		<div id="masonry" class="container-fluid">
+			<div class="box">
+				<a href="#">
+					<img src="images/pic1.jpg">
+					<div class="tit_top">中东欧国家商品馆</div>
+				</a>
+			</div>
+			<div class="box">
+				<a href="#">
+					<img src="images/pic2.jpg">
+					<div class="tit_top">中东欧国家商品馆</div>
+				</a>
+			</div>
+			<div class="box">
+				<a href="#">
+					<img src="images/pic1.jpg">
+					<div class="tit_top">中东欧国家商品馆</div>
+				</a>
+			</div>
+			<div class="box">
+				<a href="#">
+					<img src="images/pic2.jpg">
+					<div class="tit_top">中东欧国家商品馆</div>
+				</a>
+			</div>
+		</div>
+		<div class="title">
+			<div class="txt">软件服务<b></b></div>
+			<span class="icon-angle-right"></span>
+		</div>
+		<div class="list">
+			<div class="li">
+				<div class="left"><img src="images/list1.jpg"></div>
+				<div class="right">
+					<div class="h">网上继续教育平台</div>
+					<div class="p">系统主要为广大考生提供可在线视频学习、在线考试、
+模拟成绩查询的综合性平台。实现考生注册...</div>
+				</div>
+			</div>
+			<div class="li">
+				<div class="left"><img src="images/list1.jpg"></div>
+				<div class="right">
+					<div class="h">网上继续教育平台</div>
+					<div class="p">系统主要为广大考生提供可在线视频学习、在线考试、
+模拟成绩查询的综合性平台。实现考生注册...</div>
+				</div>
+			</div>
+			<div class="li">
+				<div class="left"><img src="images/list1.jpg"></div>
+				<div class="right">
+					<div class="h">网上继续教育平台</div>
+					<div class="p">系统主要为广大考生提供可在线视频学习、在线考试、
+模拟成绩查询的综合性平台。实现考生注册...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="back_top">
+			<span class="icon-triangle-up"></span>
+			<div class="right">Top</div>
+		</div>
+		<div class="foot_note">copyright ?2007-2016宁波市卓信信息技术有限公司版权所有
+经营许可：浙ICP备07026606号 </div>
+	</div>
+	<div class="menu_bot">
+		<div class="weixin box">
+			<span class="icon-wechat"></span>
+			<p>微信咨询</p>
+		</div>
+		<div class="qq box">
+			<span class="icon-qq"></span>
+			<p>业务咨询</p>
+		</div>
+		<div class="map box">
+			<span class="icon-location-pin"></span>
+			<p>业务咨询</p>
+		</div>
+		<div class="tel box">
+			<span class="icon-old-phone"></span>
+			<p>业务咨询</p>
+		</div>
+	</div>
+	<div class="menu_top" >
+		<ul>
+			<li class="on"><span class="icon-home"></span><font>首页</font></li>
+			<li><span class="icon-desktop"></span><font>网站服务</font></li>
+			<li><span class="icon-price-tags"></span><font>软件服务</font></li>
+			<li><span class="icon-bubbles2"></span><font>微信服务</font></li>
+			<li><span class="icon-user-check"></span><font>人才招聘</font></li>
+			<li><span class="icon-address-book"></span><font>关于我们</font></li>
+		</ul>
+	</div>
+	<div class="mask"></div>
+	
+	
+	<script>
+	    var swiper = new Swiper('.swiper-container',{
+	    	pagination : '.swiper-pagination',
+	    	autoplay: 5000,
+	    });
+	     $(".icon-three-bars").click(function  () {
+	     	$(".menu_top ul").addClass("open");
+	     	$(".mask").show();
+	     })
+	     $(".mask").click(function  () {
+	     	$(".menu_top ul").removeClass("open");
+	     	$(".mask").hide();
+	     })
+	
+    </script>
+	</body>
+
+</html>
